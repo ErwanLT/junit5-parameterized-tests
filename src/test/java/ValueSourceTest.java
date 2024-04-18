@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class ValueSourceTest {
     @ParameterizedTest
     @ValueSource(ints = { 2, 4 })
-    void checkpairNumber(int number) {
+    void checkPairNumber(int number) {
         assertEquals(0, MathTools.isEven(number),
                 "Le nombre fourni n’est pas un nombre pair");
     }
