@@ -22,6 +22,10 @@ jobs:
           key: cache-{{ checksum "/tmp/CIRCLECI_CACHE_KEY" }}
           paths:
             - ~/.m2/repository
+      - run:
+          command: mvn test
+      - store_artifacts:
+          path:  target
   deploy:
     # This is an example deploy job, not actually used by the workflow
     docker:
