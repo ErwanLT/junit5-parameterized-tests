@@ -12,7 +12,7 @@ public class MethodSourceTest {
     @ParameterizedTest
     @MethodSource("testArgs")
     void checkExplicitMethodSource(String word) {
-        assertTrue(StringTools.isAlphanumeric(word), "Supplied word is not alpha-numeric");
+        assertTrue(StringTools.isAlphanumeric(word), "Le mot fourni n’est pas alphanumérique");
     }
 
     static Stream<String> testArgs() {
@@ -22,7 +22,7 @@ public class MethodSourceTest {
     @ParameterizedTest
     @MethodSource
     void checkImplicitMethodSource(String word) {
-        assertTrue(StringTools.isAlphanumeric(word), "Supplied word is not alpha-numeric");
+        assertTrue(StringTools.isAlphanumeric(word), "Le mot fourni n’est pas alphanumérique");
     }
 
     static Stream<String> checkImplicitMethodSource() {
@@ -32,12 +32,12 @@ public class MethodSourceTest {
     @ParameterizedTest
     @MethodSource
     void checkMultiArgumentsMethodSource(int number, String expected) {
-        assertEquals(StringUtils.equals(expected, "even") ? 0 : 1, number % 2);
+        assertEquals(StringUtils.equals(expected, "pair") ? 0 : 1, number % 2);
     }
 
     static Stream<Arguments> checkMultiArgumentsMethodSource() {
-        return Stream.of(Arguments.of(2, "even"),
-                Arguments.of(3, "odd"));
+        return Stream.of(Arguments.of(2, "pair"),
+                Arguments.of(3, "impair"));
     }
 
     @ParameterizedTest
@@ -45,6 +45,6 @@ public class MethodSourceTest {
             "providers.ExternalMethodSourceProvider#checkExternalMethodSourceArgs")
     void checkExternalMethodSource(String word) {
         assertTrue(StringUtils.isAlphanumeric(word),
-                "Supplied word is not alpha-numeric");
+                "Le mot fourni n’est pas alphanumérique");
     }
 }

@@ -7,15 +7,15 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class ValueSourceTest {
     @ParameterizedTest
     @ValueSource(ints = { 2, 4 })
-    void checkEvenNumber(int number) {
+    void checkpairNumber(int number) {
         assertEquals(0, MathTools.isEven(number),
-                "Supplied number is not an even number");
+                "Le nombre fourni n’est pas un nombre pair");
     }
 
     @ParameterizedTest
     @ValueSource(strings = { "a1", "b2" })
     void checkAlphanumeric(String word) {
         assertTrue(StringTools.isAlphanumeric(word),
-                "Supplied word is not alpha-numeric");
+                "Le mot fourni n’est pas alphanumérique");
     }
 }
