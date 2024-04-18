@@ -29,7 +29,7 @@ jobs:
           name: Upload coverage report to Codecov
           command: |
             curl -s https://codecov.io/bash > codecov.sh
-            bash codecov.sh -f target/site/jacoco/jacoco.xml -t ${{CODECOV_TOKEN}}
+            bash codecov.sh -f target/site/jacoco/jacoco.xml -t $CODECOV_TOKEN
   deploy:
     # This is an example deploy job, not actually used by the workflow
     docker:
