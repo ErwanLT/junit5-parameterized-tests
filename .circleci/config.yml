@@ -23,9 +23,13 @@ jobs:
           paths:
             - ~/.m2/repository
       - run:
-          command: mvn test
-      - store_artifacts:
-          path:  target
+          name: Run tests and generate coverage report
+          command: mvn clean test org.jacoco:jacoco-maven-plugin:report
+      - run:
+          name: Upload coverage report to Codecov
+          command: |
+            curl -s https://codecov.io/bash > codecov.sh
+            bash codecov.sh -f target/site/jacoco/jacoco.xml -t ${{secrets.CODECOV_TOKEN}}
   deploy:
     # This is an example deploy job, not actually used by the workflow
     docker:
