@@ -30,5 +30,5 @@ Assurez-vous d'ajouter JUnit 5 à votre projet Maven ou Gradle. Voici un exemple
 Si vous souhaitez contribuer à cet exemple ou apporter des améliorations, n'hésitez pas à ouvrir une Pull Request.
 
 ## Licence
-Ce projet est sous licence APACHE 2 - voir le fichier LICENSE pour plus de détails.
+Ce projet est sous licence APACHE 2 - voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
